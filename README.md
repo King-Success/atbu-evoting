@@ -1,4 +1,3 @@
-# kwasu-evoting
 # OVERVIEW
 Election is one the many ways that guarantee the full participation of any given citizenry in the process of governance, this is necessary because not everyone can be part of the decision making process hence the need for representation. With technology taking over every aspect of the human endeavor from e-mails, e-banking, e-shopping etc, election is not an exception in this regard.
 
