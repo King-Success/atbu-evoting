@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule     ^api/user/transaction       api/fnc.user.transaction.php
+
+RewriteRule     ^forms/exam                 forms/exam.html?$1
