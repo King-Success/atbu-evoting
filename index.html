@@ -1,198 +1,147 @@
 <!DOCTYPE html>
-<html lang="en-gb" dir="ltr">
-<head>
-    <title>SUG ATBU E-voting</title>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" href="images/apple-icon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@atbuevoting">
-    <meta name="twitter:image" content="https://getuikit.com/images/uikit-meta.png">
-    <meta property="og:locale" content="en_GB">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="E-voting">
-    <meta property="og:description" content="SUG ATBU E-voting, a web interface for conduction online elections into executive offices of the Students' Union Government.">
-    <meta property="og:url" content="https://getuikit.com/">
-    <meta property="og:site_name" content="UIkit">
-    <meta property="og:image" content="https://getuikit.com/images/uikit-meta.png">
-    <link rel="stylesheet" href="css/theme.css?203">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.1.1/vue-router.min.js"></script>
-    <script src="js/uikit.min.js?203" defer=""></script>
-</head>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body>
-    <div>
-        <div class="uk-section-primary tm-section">
-            <div uk-sticky="media: 960" class="uk-navbar-container tm-navbar-container uk-navbar-transparent uk-sticky">
-                <div class="uk-container uk-container-expand">
-                    <nav class="uk-navbar">
-                        <div class="uk-navbar-left">
-                            <a href="./" class="uk-navbar-item uk-logo uk-active">
-                                <img uk-icon-image src="./images/logo-sug.png" /> SUG E-voting
-                            </a>
-                        </div>
-                        <div class="uk-navbar-right">
-                            <ul class="uk-navbar-nav uk-visible@m">
-                                <li><a href="/elcom">Elcom</a></li>
-                                <li><a href="/candidates">Aspirants</a></li>
-                                <li><a href="/guidelines">Guidelines</a></li>
-                            </ul>
-                            <div class="uk-navbar-item uk-visible@m">
-                                <a href="/login" class="uk-button uk-button-default tm-button-default uk-icon">Log in</a>
+        <title>SUG ATBU E-voting</title>
+
+        <link href="assets/images/favicon.ico" rel="shortcut icon">
+        <link href="assets/images/apple-icon.png" rel="apple-touch-icon-precomposed">
+
+        <!-- link all the styles -->
+        <link rel="stylesheet" href="assets/css/theme.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- link all the scripts -->
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/uikit.min.js"></script>
+
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div>
+            <div class="uk-section-primary tm-section">
+                <div uk-sticky="media: 960" class="uk-navbar-container tm-navbar-container uk-navbar-transparent uk-sticky">
+                    <div class="uk-container uk-container-expand">
+                        <nav class="uk-navbar">
+                            <div class="uk-navbar-left">
+                                <a href="./" class="uk-navbar-item uk-logo uk-active">
+                                    <img uk-icon-image src="assets/images/logo-sug.png" /> SUG E-voting
+                                </a>
                             </div>
-                            <a uk-navbar-toggle-icon="" href="#offcanvas" uk-toggle="" class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon"></a>
-                        </div>
-                    </nav>
+                            <div class="uk-navbar-right">
+                                <ul class="uk-navbar-nav uk-visible@m">
+                                    <li><a href="./elcom">Elcom</a></li>
+                                    <li><a href="./candidates">Aspirants</a></li>
+                                    <li><a href="./guidelines">Guidelines</a></li>
+                                </ul>
+                                <div class="uk-navbar-item uk-visible@m">
+                                    <a uk-toggle="target: #login-modal" class="uk-button uk-button-default tm-button-default uk-icon">
+                                        Log in <span uk-icon="icon: sign-in" class="uk-icon"></span>
+                                    </a>
+                                </div>
+                                <a uk-navbar-toggle-icon="" href="#offcanvas" uk-toggle="" class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon"></a>
+                            </div>
+                        </nav>
+                    </div>
                 </div>
-            </div>
-            <div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;" hidden="hidden"></div>
-            <div uk-height-viewport="offset-top: true; offset-bottom: true" class="uk-section uk-section-small uk-flex uk-flex-middle uk-text-center" style="box-sizing: border-box; min-height: calc(100vh - 215px);">
-                <div class="uk-width-1-1">
-                    <div class="uk-container">
-                        <p>
-                            <img uk-svg="" src="./images/ATBU.png">
-                            <img uk-svg="" src="./images/SUG.png">
-                        </p>
-                        <p class="uk-margin-medium uk-text-lead">
-                            Abubakar Tafawa Balewa University, Bauchi <br class="uk-visible@s">Students' Union Government<br class="uk-visible@s">
-                            E-voting system for free, fair and credible elections.
-                        </p>
-                        <div uk-grid="" class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid">
-                            <div class="uk-first-column">
-                                <a href="./form" class="uk-button uk-button-primary tm-button-primary">Aspirant form</a>
-                            </div>
-                            <div>
-                                <a href="" class="uk-button uk-button-default tm-button-default">How to vote</a>
+                <div uk-height-viewport="offset-top: true; offset-bottom: true" class="uk-section uk-section-small uk-flex uk-flex-middle uk-text-center" style="box-sizing: border-box; min-height: calc(100vh - 215px);">
+                    <div class="uk-width-1-1">
+                        <div class="uk-container">
+                            <p>
+                                <img src="assets/images/ATBU.png">
+                                <img src="assets/images/SUG.png">
+                            </p>
+                            <p class="uk-margin-medium uk-text-lead">
+                                Abubakar Tafawa Balewa University, Bauchi <br class="uk-visible@s">Students' Union Government<br class="uk-visible@s">
+                                E-voting system for fair and credible elections.
+                            </p>
+                            <div uk-grid="" class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid">
+                                <div class="uk-first-column">
+                                    <a href="./form" class="uk-button uk-button-primary tm-button-primary">Aspirant form</a>
+                                </div>
+                                <div>
+                                    <a href="" class="uk-button uk-button-default tm-button-default">How to vote</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="uk-section-small">
+                    <div class="uk-container uk-container-expand uk-text-center uk-position-relative">
+                        <ul uk-margin="" class="uk-subnav tm-subnav uk-flex-inline uk-flex-center uk-margin-remove-bottom">
+                            <li class="uk-first-column"><span>Copyright &copy; SUG ATBU. All rights reserved.</span></li>
+                            <li class="uk-margin-small-top uk-first-column"><span>Version <span evoting-version="">1.1</span></span></li>
+                            <li class="uk-margin-small-top uk-first-column">
+                                <a href="https://twitter.com/itssadon" class="uk-text-lowercase" target="_blank">
+                                    <span uk-icon="icon: twitter" class="uk-margin-small-right uk-icon"></span>@itssadon
+                                </a>
+                            </li>
+                            <li class="uk-margin-small-top">
+                                <a href="">
+                                    <span uk-icon="icon: commenting" class="uk-margin-small-right uk-icon"></span>
+                                    Comment
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="uk-section-small">
-                <div class="uk-container uk-container-expand uk-text-center uk-position-relative">
-                    <ul uk-margin="" class="uk-subnav tm-subnav uk-flex-inline uk-flex-center uk-margin-remove-bottom">
-                        <li class="uk-first-column"><span>Copyright &copy; SUG ATBU. All rights reserved.</span></li>
-                        <li class="uk-margin-small-top uk-first-column"><span>Version <span evoting-version="">1.1</span></span></li>
-                        <li class="uk-margin-small-top uk-first-column">
-                            <a href="https://twitter.com/itssadon" class="uk-text-lowercase" target="_blank">
-                                <span uk-icon="icon: twitter" class="uk-margin-small-right uk-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" icon="twitter" width="20" height="20" ratio="1">
-                                        <path d="M19,4.74 C18.339,5.029 17.626,5.229 16.881,5.32 C17.644,4.86 18.227,4.139 18.503,3.28 C17.79,3.7 17.001,4.009 16.159,4.17 C15.485,3.45 14.526,3 13.464,3 C11.423,3 9.771,4.66 9.771,6.7 C9.771,6.99 9.804,7.269 9.868,7.539 C6.795,7.38 4.076,5.919 2.254,3.679 C1.936,4.219 1.754,4.86 1.754,5.539 C1.754,6.82 2.405,7.95 3.397,8.61 C2.79,8.589 2.22,8.429 1.723,8.149 L1.723,8.189 C1.723,9.978 2.997,11.478 4.686,11.82 C4.376,11.899 4.049,11.939 3.713,11.939 C3.475,11.939 3.245,11.919 3.018,11.88 C3.49,13.349 4.852,14.419 6.469,14.449 C5.205,15.429 3.612,16.019 1.882,16.019 C1.583,16.019 1.29,16.009 1,15.969 C2.635,17.019 4.576,17.629 6.662,17.629 C13.454,17.629 17.17,12 17.17,7.129 C17.17,6.969 17.166,6.809 17.157,6.649 C17.879,6.129 18.504,5.478 19,4.74"></path>
-                                    </svg>
-                                </span>@itssadon
-                            </a>
-                        </li>
-                        <li class="uk-margin-small-top">
-                            <a href="">
-                                <span uk-icon="icon: commenting" class="uk-margin-small-right uk-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" icon="commenting" width="20" height="20" ratio="1">
-                                        <polygon fill="none" stroke="#000" points="1.5,1.5 18.5,1.5 18.5,13.5 10.5,13.5 6.5,17.5 6.5,13.5 1.5,13.5"></polygon>
-                                        <circle cx="10" cy="8" r="1"></circle>
-                                        <circle cx="6" cy="8" r="1"></circle>
-                                        <circle cx="14" cy="8" r="1"></circle>
-                                    </svg>
-                                </span>
-                                Comment
-                            </a>
-                        </li>
-                    </ul>
+
+            <!-- This is the modal -->
+            <div id="login-modal" uk-modal="center: true">
+                <div class="uk-modal-dialog">
+                    <button class="uk-modal-close-outside" type="button" uk-close></button>
+                    <div class="uk-modal-header">
+                        <h2 class="uk-modal-title">Log in</h2>
+                    </div>
+                    <div class="uk-modal-body">
+                        <div class="uk-flex-center" uk-grid>
+                            <form>
+                                <div class="uk-margin">
+                                    <div class="uk-inline">
+                                        <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                        <input class="uk-input" type="text" placeholder="Username">
+                                    </div>
+                                </div>
+                                <div class="uk-margin">
+                                    <div class="uk-inline">
+                                        <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                        <input class="uk-input" type="text" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="uk-margin uk-text-center">
+                                    <button id="login" class="uk-button uk-button-primary uk-margin-small-bottom">Log in</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="offcanvas" uk-offcanvas="mode: push" class="uk-offcanvas">
+                <div class="uk-offcanvas-bar">
+                    <div class="uk-panel">
+                        <ul class="uk-nav uk-nav-default tm-nav">
+                            <li class="uk-nav-header">General</li>
+                            <li><a href="./">Home</a></li>
+                            <li><a href="./elcom">Elcom</a></li>
+                            <li><a href="./aspirants">Aspirants</a></li>
+                            <li><a href="./guidelines">Guidelines</a></li>
+                            <li><a uk-toggle="target: #login-modal">Log in</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="offcanvas" uk-offcanvas="mode: push" class="uk-offcanvas">
-            <div class="uk-offcanvas-bar">
-                <div class="uk-panel">
-                    <ul class="uk-nav uk-nav-default tm-nav">
-                        <li class="uk-nav-header">General</li>
-                        <li><a href="./index">Home</a></li>
-                        <li><a href="./changelog">Changelog</a></li>
-                        <li><a href="./download">Download</a></li>
-                    </ul>
-                    <ul class="uk-nav uk-nav-default tm-nav uk-margin-top">
-                        <li class="uk-nav-header">Getting started</li>
-                        <li exact=""><a href="./docs/introduction">Introduction</a></li>
-                        <li exact=""><a href="./docs/installation">Installation</a></li>
-                        <li exact=""><a href="./docs/less">Less</a></li>
-                        <li exact=""><a href="./docs/javascript">JavaScript</a></li>
-                        <li exact=""><a href="./docs/migration">Migration</a></li>
-                    </ul>
-                    <ul class="uk-nav uk-nav-default tm-nav uk-margin-top">
-                        <li class="uk-nav-header">Components</li>
-                        <li exact=""><a href="./docs/accordion">Accordion</a></li>
-                        <li exact=""><a href="./docs/alert">Alert</a></li>
-                        <li exact=""><a href="./docs/align">Align</a></li>
-                        <li exact=""><a href="./docs/animation">Animation</a></li>
-                        <li exact=""><a href="./docs/article">Article</a></li>
-                        <li exact=""><a href="./docs/background">Background</a></li>
-                        <li exact=""><a href="./docs/badge">Badge</a></li>
-                        <li exact=""><a href="./docs/base">Base</a></li>
-                        <li exact=""><a href="./docs/breadcrumb">Breadcrumb</a></li>
-                        <li exact=""><a href="./docs/button">Button</a></li>
-                        <li exact=""><a href="./docs/card">Card</a></li>
-                        <li exact=""><a href="./docs/close">Close</a></li>
-                        <li exact=""><a href="./docs/column">Column</a></li>
-                        <li exact=""><a href="./docs/comment">Comment</a></li>
-                        <li exact=""><a href="./docs/container">Container</a></li>
-                        <li exact=""><a href="./docs/cover">Cover</a></li>
-                        <li exact=""><a href="./docs/description-list">Description List</a></li>
-                        <li exact=""><a href="./docs/divider">Divider</a></li>
-                        <li exact=""><a href="./docs/dotnav">Dotnav</a></li>
-                        <li exact=""><a href="./docs/drop">Drop</a></li>
-                        <li exact=""><a href="./docs/dropdown">Dropdown</a></li>
-                        <li exact=""><a href="./docs/flex">Flex</a></li>
-                        <li exact=""><a href="./docs/form">Form</a></li>
-                        <li exact=""><a href="./docs/grid">Grid</a></li>
-                        <li exact=""><a href="./docs/heading">Heading</a></li>
-                        <li exact=""><a href="./docs/icon">Icon</a></li>
-                        <li exact=""><a href="./docs/iconnav">Iconnav</a></li>
-                        <li exact=""><a href="./docs/inverse">Inverse</a></li>
-                        <li exact=""><a href="./docs/label">Label</a></li>
-                        <li exact=""><a href="./docs/link">Link</a></li>
-                        <li exact=""><a href="./docs/list">List</a></li>
-                        <li exact=""><a href="./docs/margin">Margin</a></li>
-                        <li exact=""><a href="./docs/modal">Modal</a></li>
-                        <li exact=""><a href="./docs/nav">Nav</a></li><
-                        li exact=""><a href="./docs/navbar">Navbar</a></li>
-                        <li exact=""><a href="./docs/notification">Notification</a></li>
-                        <li exact=""><a href="./docs/offcanvas">Off-canvas</a></li>
-                        <li exact=""><a href="./docs/overlay">Overlay</a></li>
-                        <li exact=""><a href="./docs/padding">Padding</a></li>
-                        <li exact=""><a href="./docs/pagination">Pagination</a></li>
-                        <li exact=""><a href="./docs/placeholder">Placeholder</a></li>
-                        <li exact=""><a href="./docs/position">Position</a></li>
-                        <li exact=""><a href="./docs/print">Print</a></li>
-                        <li exact=""><a href="./docs/progress">Progress</a></li>
-                        <li exact=""><a href="./docs/scroll">Scroll</a></li>
-                        <li exact=""><a href="./docs/scrollspy">Scrollspy</a></li>
-                        <li exact=""><a href="./docs/search">Search</a></li>
-                        <li exact=""><a href="./docs/section">Section</a></li>
-                        <li exact=""><a href="./docs/slidenav">Slidenav</a></li>
-                        <li exact=""><a href="./docs/sortable">Sortable</a></li>
-                        <li exact=""><a href="./docs/spinner">Spinner</a></li>
-                        <li exact=""><a href="./docs/sticky">Sticky</a></li>
-                        <li exact=""><a href="./docs/subnav">Subnav</a></li>
-                        <li exact=""><a href="./docs/switcher">Switcher</a></li>
-                        <li exact=""><a href="./docs/tab">Tab</a></li>
-                        <li exact=""><a href="./docs/table">Table</a></li>
-                        <li exact=""><a href="./docs/text">Text</a></li>
-                        <li exact=""><a href="./docs/toggle">Toggle</a></li>
-                        <li exact=""><a href="./docs/tooltip">Tooltip</a></li>
-                        <li exact=""><a href="./docs/totop">Totop</a></li>
-                        <li exact=""><a href="./docs/transition">Transition</a></li>
-                        <li exact=""><a href="./docs/upload">Upload</a></li>
-                        <li exact=""><a href="./docs/utility">Utility</a></li>
-                        <li exact=""><a href="./docs/visibility">Visibility</a></li>
-                        <li exact=""><a href="./docs/width">Width</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</body>
+    </body>
 </html>
