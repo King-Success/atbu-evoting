@@ -14,10 +14,6 @@
         <link rel="stylesheet" href="assets/css/theme.css">
         <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- link all the scripts -->
-        <script src="assets/js/jquery.js"></script>
-        <script src="assets/js/uikit.min.js"></script>
-
         <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -39,6 +35,7 @@
                             </div>
                             <div class="uk-navbar-right">
                                 <ul class="uk-navbar-nav uk-visible@m">
+                                    <li class="uk-active"><a href="./"><span uk-icon="icon: home"></span></a></li>
                                     <li><a href="./elcom">Elcom</a></li>
                                     <li><a href="./candidates">Aspirants</a></li>
                                     <li><a href="./guidelines">Guidelines</a></li>
@@ -55,7 +52,7 @@
                 </div>
                 <div uk-height-viewport="offset-top: true; offset-bottom: true" class="uk-section uk-section-small uk-flex uk-flex-middle uk-text-center" style="box-sizing: border-box; min-height: calc(100vh - 215px);">
                     <div class="uk-width-1-1">
-                        <div class="uk-container">
+                        <div class="uk-container" id="page_content">
                             <p>
                                 <img src="assets/images/ATBU.png">
                                 <img src="assets/images/SUG.png">
@@ -131,7 +128,7 @@
                 <div class="uk-offcanvas-bar">
                     <div class="uk-panel">
                         <ul class="uk-nav uk-nav-default tm-nav">
-                            <li class="uk-nav-header">General</li>
+                            <li class="uk-nav-header">Menu</li>
                             <li><a href="./">Home</a></li>
                             <li><a href="./elcom">Elcom</a></li>
                             <li><a href="./aspirants">Aspirants</a></li>
@@ -141,7 +138,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
 
+        <!-- link all the scripts -->
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/uikit.min.js"></script>
     </body>
 </html>
