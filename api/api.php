@@ -1532,7 +1532,7 @@ class PHP_CRUD_API {
 // uncomment the lines below for token+session based authentication (see "login_token.html" + "login_token.php"):
 
 // $auth = new PHP_API_AUTH(array(
-// 	'secret'=>'someVeryLongPassPhraseChangeMe',
+// 	'secret'=>'1sadon#hassan[]2abdulaziz#dolapo[]3ibrahim#damisa[]',
 // ));
 // if ($auth->executeCommand()) exit(0);
 // if (empty($_SESSION['user']) || $_GET['csrf']!=$_SESSION['csrf']) {
@@ -1562,35 +1562,3 @@ $api = new PHP_CRUD_API(array(
 	'charset'=>'utf8'
 ));
 $api->executeCommand();
-
-// For Microsoft SQL Server 2012 use:
-
-// $api = new PHP_CRUD_API(array(
-// 	'dbengine'=>'SQLServer',
-// 	'hostname'=>'(local)',
-// 	'username'=>'',
-// 	'password'=>'',
-// 	'database'=>'xxx',
-// 	'charset'=>'UTF-8'
-// ));
-// $api->executeCommand();
-
-// For PostgreSQL 9 use:
-
-// $api = new PHP_CRUD_API(array(
-// 	'dbengine'=>'PostgreSQL',
-// 	'hostname'=>'localhost',
-// 	'username'=>'xxx',
-// 	'password'=>'xxx',
-// 	'database'=>'xxx',
-// 	'charset'=>'UTF8'
-// ));
-// $api->executeCommand();
-
-// For SQLite 3 use:
-
-// $api = new PHP_CRUD_API(array(
-// 	'dbengine'=>'SQLite',
-// 	'database'=>'data/blog.db',
-// ));
-// $api->executeCommand();

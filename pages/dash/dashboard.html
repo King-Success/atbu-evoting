@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>SUG ATBU E-voting</title>
+        <title>Dashboar &middont; SUG ATBU E-voting</title>
 
         <link href="assets/images/favicon.ico" rel="shortcut icon">
         <link href="assets/images/apple-icon.png" rel="apple-touch-icon-precomposed">
@@ -20,7 +20,7 @@
         <script src="assets/js/pace.min.js"></script>
         <script src="assets/js/uikit.min.js"></script>
         <script src="assets/js/util.js"></script>
-        <script src="assets/js/index.js"></script>
+        <script src="assets/js/app.js"></script>
 
         <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,14 +43,11 @@
                             </div>
                             <div class="uk-navbar-right">
                                 <ul class="uk-navbar-nav uk-visible@m">
-                                    <li class="uk-active"><a href="./"><span uk-icon="icon: home"></span></a></li>
-                                    <li><a href="./elcom">Elcom</a></li>
-                                    <li><a href="./candidates">Aspirants</a></li>
-                                    <li><a href="./guidelines">Guidelines</a></li>
+                                    <li><a><span uk-icon="icon: user" class="uk-margin-small-right uk-icon"></span> <span id="user"></span></a></li>
                                 </ul>
                                 <div class="uk-navbar-item uk-visible@m">
-                                    <a uk-toggle="target: #login-modal" class="uk-button uk-button-default tm-button-default uk-icon">
-                                        Log in <span uk-icon="icon: sign-in" class="uk-icon"></span>
+                                    <a id="logout" class="uk-button uk-button-default tm-button-default uk-icon">
+                                        Log out <span uk-icon="icon: sign-out" class="uk-icon"></span>
                                     </a>
                                 </div>
                                 <a uk-navbar-toggle-icon="" href="#offcanvas" uk-toggle="" class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon"></a>
@@ -84,48 +81,12 @@
                 </div>
             </div>
 
-            <!-- This is the modal -->
-            <div id="login-modal" uk-modal="center: true">
-                <div class="uk-modal-dialog">
-                    <button class="uk-modal-close-outside" type="button" uk-close></button>
-                    <div class="uk-modal-header">
-                        <h2 class="uk-modal-title">Log in</h2>
-                    </div>
-                    <div class="uk-modal-body">
-                        <div class="uk-flex-center" uk-grid>
-                            <form autocomplete="off">
-                                <div class="uk-margin">
-                                    <div class="uk-inline">
-                                        <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                        <input class="uk-input" type="text" placeholder="Username" id="username" autofocus="">
-                                    </div>
-                                </div>
-                                <div class="uk-margin">
-                                    <div class="uk-inline">
-                                        <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                                        <input class="uk-input" type="password" placeholder="Password" id="password">
-                                    </div>
-                                </div>
-                                <div class="uk-margin uk-text-center">
-                                    <div uk-spinner hidden="true" id="spinner"></div>
-                                    <button id="login" class="uk-button uk-button-primary uk-margin-small-bottom">Log in</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div id="offcanvas" uk-offcanvas="mode: push" class="uk-offcanvas">
                 <div class="uk-offcanvas-bar">
                     <div class="uk-panel">
                         <ul class="uk-nav uk-nav-default tm-nav">
                             <li class="uk-nav-header">Menu</li>
-                            <li><a href="./">Home</a></li>
-                            <li><a href="./elcom">Elcom</a></li>
-                            <li><a href="./aspirants">Aspirants</a></li>
-                            <li><a href="./guidelines">Guidelines</a></li>
-                            <li><a uk-toggle="target: #login-modal">Log in</a></li>
+                            <li><a id="logout_2">Log out</a></li>
                         </ul>
                     </div>
                 </div>
