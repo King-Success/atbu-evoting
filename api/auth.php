@@ -42,18 +42,18 @@ if(!($username==='' || $password==='')) {
                     echo json_encode($response, JSON_FORCE_OBJECT);
                 } else {
                     http_response_code(200);
-                    $response = array("status"=>false, "message"=>"User authenticated", "user"=>array("username"=>$row["username"], "fullname"=>$row["name"], "role_id"=>$row["role_id"], "token"=>$user_token));
+                    $response = array("status"=>false, "message"=>"User authenticated. Logging in...", "user"=>array("id"=>$row['id'], "username"=>$row["username"], "fullname"=>$row["name"], "role_id"=>$row["role_id"], "token"=>$user_token));
                     echo json_encode($response, JSON_FORCE_OBJECT);
                 }
             } else {
                 http_response_code(400);
-                $response = array("status"=>false, "message"=>"Password is incorrect");
+                $response = array("status"=>false, "message"=>"Username or password is incorrect");
                 echo json_encode($response, JSON_FORCE_OBJECT);
             }
         }
     } else {
         http_response_code(400);
-        $response = array("status"=>false, "message"=>"Username is incorrect");
+        $response = array("status"=>false, "message"=>"Username or password is incorrect");
         echo json_encode($response, JSON_FORCE_OBJECT);
     }
     $stmt->close();

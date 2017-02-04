@@ -23,11 +23,10 @@ function loginUser(username, password) {
     })
     .done(function(response) {
         setCookie("evoting_domain", window.location, 1);
-        setCookie("evoting_user", response.user.username, 1);
-        setCookie("evoting_user_name", response.user.fullname, 1);
+        setCookie("evoting_user_id", response.user.id, 1);
         setCookie("evoting_user_role", response.user.role_id, 1);
         setCookie("evoting_user_token", response.user.token, 1);
-        UIkit.notification("<span uk-icon='icon: check'></span> "+response.message+". Redirecting...", "success", "top-right");
+        UIkit.notification("<span uk-icon='icon: check'></span> "+response.message, "success", "top-right");
         setTimeout(function(){ window.location = "dashboard"; }, 3000);
         $("#login").attr("hidden", false);
         $("#spinner").attr("hidden", true);
