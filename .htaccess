@@ -2,6 +2,8 @@ RewriteEngine On
 
 RewriteRule ^api/docs api/api.php
 RewriteRule ^api/v1/authenticate api/auth.php
+RewriteRule ^api/v1/password api/pass.php
+RewriteRule ^api/v1/userlist api/users_list.php
 RewriteRule ^api/v1/logout api/logout.php
 RewriteRule ^api/v1/([A-Za-z0-9/]+) api/api.php/$1 [QSA,L]
 

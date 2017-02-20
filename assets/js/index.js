@@ -28,8 +28,6 @@ function loginUser(username, password) {
         setCookie("evoting_user_token", response.user.token, 1);
         UIkit.notification("<span uk-icon='icon: check'></span> "+response.message, "success", "top-right");
         setTimeout(function(){ window.location = "dashboard"; }, 3000);
-        $("#login").attr("hidden", false);
-        $("#spinner").attr("hidden", true);
     })
     .fail(function(response) {
         UIkit.notification("<span uk-icon='icon: warning'></span> "+response.responseJSON.message, "danger", "top-right");

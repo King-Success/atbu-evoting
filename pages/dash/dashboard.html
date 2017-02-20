@@ -5,12 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Dashboar &middont; SUG ATBU E-voting</title>
+        <title>Dashboard &middot; SUG ATBU E-voting</title>
 
         <link href="assets/images/favicon.ico" rel="shortcut icon">
         <link href="assets/images/apple-icon.png" rel="apple-touch-icon-precomposed">
 
         <!-- link all the styles -->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/theme.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/pace.css">
@@ -33,35 +34,33 @@
     <body>
         <div>
             <div class="uk-section-primary tm-section">
-                <div uk-sticky="media: 960" class="uk-navbar-container tm-navbar-container uk-navbar-transparent uk-sticky">
+                <div uk-sticky="media: 960" class="uk-navbar-container tm-navbar-container uk-sticky">
                     <div class="uk-container uk-container-expand">
                         <nav class="uk-navbar">
                             <div class="uk-navbar-left">
-                                <a href="./" class="uk-navbar-item uk-logo uk-active">
+                                <a class="uk-navbar-item uk-logo uk-active">
                                     <img uk-icon-image src="assets/images/logo-sug.png" /> SUG E-voting
                                 </a>
                             </div>
                             <div class="uk-navbar-right">
                                 <ul class="uk-navbar-nav uk-visible@m">
-                                    <li><a><span uk-icon="icon: user" class="uk-margin-small-right uk-icon"></span> <span id="user"></span></a></li>
+                                    <li><a id="profile"><span uk-icon="icon: user" class="uk-margin-small-right uk-icon"></span><span id="user"></span></a></li>
+                                    <li><a id="change_password">Change password</a></li>
+                                    <li><a id="logout"><span uk-icon="icon: sign-out" class="uk-icon"></span></a></li>
                                 </ul>
-                                <div class="uk-navbar-item uk-visible@m">
-                                    <a id="logout" class="uk-button uk-button-default tm-button-default uk-icon">
-                                        Log out <span uk-icon="icon: sign-out" class="uk-icon"></span>
-                                    </a>
-                                </div>
                                 <a uk-navbar-toggle-icon="" href="#offcanvas" uk-toggle="" class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon"></a>
                             </div>
                         </nav>
                     </div>
                 </div>
-                <div uk-height-viewport="offset-top: true; offset-bottom: true" class="uk-section uk-section-small uk-flex uk-flex-middle uk-text-center" style="box-sizing: border-box; min-height: calc(100vh - 215px);">
+                <div uk-height-viewport="offset-top: true; offset-bottom: true" class="uk-section uk-flex uk-flex-middle uk-text-center" style="box-sizing: border-box; min-height: calc(100vh - 215px);">
                     <div class="uk-width-1-1">
                         <div class="uk-container" id="page_content"></div>
                     </div>
                 </div>
                 <div class="uk-section-small">
                     <div class="uk-container uk-container-expand uk-text-center uk-position-relative">
+                        <hr class="uk-divider-icon">
                         <ul uk-margin="" class="uk-subnav tm-subnav uk-flex-inline uk-flex-center uk-margin-remove-bottom">
                             <li class="uk-first-column"><span>Copyright &copy; SUG ATBU. All rights reserved.</span></li>
                             <li class="uk-margin-small-top uk-first-column"><span>Version <span evoting-version="">1.1</span></span></li>

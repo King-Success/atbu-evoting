@@ -6,3 +6,7 @@ body {
     min-height: 100%;
     background: url(../images/section-background.svg) 50% 50% no-repeat,linear-gradient(to left top, #28a5f5, #1e87f0) 0 0 no-repeat;
 }
+
+.uk-card-default {
+    background-color: silver;
+}
